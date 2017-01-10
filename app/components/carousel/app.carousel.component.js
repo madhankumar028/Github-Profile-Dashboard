@@ -9,17 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+// TODO parent comp
+// import { AppComponent } from '../core/app.component';
+var app_component_service_1 = require("../core/app.component.service");
+var app_carousel_component_service_1 = require("./app.carousel.component.service");
 var CarouselComponent = (function () {
-    function CarouselComponent() {
+    function CarouselComponent(appComponentService) {
+        this.appComponentService = appComponentService;
     }
+    CarouselComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.appComponentService.getUser()
+            .subscribe(function (data) {
+            _this.user = data.json();
+        });
+    };
     return CarouselComponent;
 }());
 CarouselComponent = __decorate([
     core_1.Component({
-        selector: 'ngcarousel',
-        templateUrl: 'app/components/carousel/app.carousel.component.html'
+        selector: 'ng-carousel',
+        templateUrl: 'app/components/carousel/app.carousel.component.html',
+        styleUrls: ['app/components/carousel/app.carousel.component.css'],
+        providers: [app_carousel_component_service_1.CarouselService, app_component_service_1.AppComponentService]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [app_component_service_1.AppComponentService])
 ], CarouselComponent);
 exports.CarouselComponent = CarouselComponent;
 //# sourceMappingURL=app.carousel.component.js.map

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AppComponentService } from './app.component.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { AppComponentService } from './app.component.service';
 export class AppComponent implements OnInit {
     
     title = 'App started';
-    user: Array<Object>;
+    @Input() user: Array<Object>;
 
     constructor (private appComponentService: AppComponentService) {}
 
@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
         this.appComponentService.getUser()
             .subscribe(data => {
                 this.user = data.json();
-                console.log(this.user);
             });
     }
 }

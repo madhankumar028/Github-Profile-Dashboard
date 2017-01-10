@@ -1,9 +1,12 @@
-<div class="container" *ngIf="user">
+<div class="container fixed-container" *ngIf="user">
     <div class="col-sm-4">
         <h1>{{title}}</h1>
         <img class="img-circle" [src]="user.avatar_url" alt="Pic is Loading">
     </div>
     <div class="carousel">
-        <ngcarousel></ngcarousel>
+        <ng-carousel></ng-carousel>
     </div>
+</div>
+<div>
+    <lang-repo></lang-repo>
 </div>

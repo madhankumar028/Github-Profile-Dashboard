@@ -5,5 +5,6 @@ import { Http } from '@angular/http';
 export class CarouselService {
 
     constructor(private http: Http) {}
+
     
 }

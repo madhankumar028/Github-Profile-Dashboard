@@ -7,15 +7,17 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponentService} from './components/core/app.component.service';
 import { CarouselComponent } from './components/carousel/app.carousel.component';
+import { LanguageComponent } from './components/language/app.language.component';
 
 @NgModule({
     imports: [NgbModule.forRoot(), BrowserModule, FormsModule, HttpModule],
     declarations: [
         AppComponent,
-        CarouselComponent
+        CarouselComponent,
+        LanguageComponent
     ],
     providers: [AppComponentService],
-    bootstrap: [AppComponent]   
+    bootstrap: [AppComponent]
 })
 
 export class AppModule {}

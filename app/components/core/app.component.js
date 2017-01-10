@@ -20,11 +20,14 @@ var AppComponent = (function () {
         this.appComponentService.getUser()
             .subscribe(function (data) {
             _this.user = data.json();
-            console.log(_this.user);
         });
     };
     return AppComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], AppComponent.prototype, "user", void 0);
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
