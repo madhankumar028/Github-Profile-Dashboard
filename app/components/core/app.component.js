@@ -28,10 +28,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',
-        template: "\n        <div class=\"col-sm-4\">\n            <h1>{{title}}</h1>\n        </div>\n    ",
-        styles: [
-            "\n        .col-sm-4 {\n            width: 20%;\n            background-color: yellow;\n            height: 100%;\n        }\n        "
-        ],
+        templateUrl: 'app/components/core/app.component.html',
+        styleUrls: ['app/components/core/app.component.css'],
         providers: [app_component_service_1.AppComponentService]
     }),
     __metadata("design:paramtypes", [app_component_service_1.AppComponentService])

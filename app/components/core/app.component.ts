@@ -1,28 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponentService } from './app.component.service';
+
 @Component({
     selector: 'app-root',
-    template: `
-        <div class="col-sm-4">
-            <h1>{{title}}</h1>
-        </div>
-    `,
-    styles: [
-        `
-        .col-sm-4 {
-            width: 20%;
-            background-color: yellow;
-            height: 100%;
-        }
-        `
-    ],
+    templateUrl: 'app/components/core/app.component.html',
+    styleUrls: ['app/components/core/app.component.css'],
     providers: [AppComponentService]
 })
 
 export class AppComponent implements OnInit {
     
     title = 'App started';
-    user: any;
+    user: Array<Object>;
 
     constructor (private appComponentService: AppComponentService) {}
 
@@ -31,6 +20,6 @@ export class AppComponent implements OnInit {
             .subscribe(data => {
                 this.user = data.json();
                 console.log(this.user);
-            })
+            });
     }
 }

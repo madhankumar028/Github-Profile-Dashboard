@@ -1,0 +1,12 @@
+.container {
+    margin: 0px;
+    width: 20%;
+    background-color: yellow;
+    height: 100%;
+}
+.container .col-sm-4 {
+    padding: 60px;
+}
+.col-sm-4 .img-circle {
+    width: 130px;
+}

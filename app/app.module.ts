@@ -3,12 +3,17 @@ import { BrowserModule} from '@angular/platform-browser';
 import { FormsModule} from '@angular/forms';
 import { AppComponent } from './components/core/app.component';
 import { HttpModule} from '@angular/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponentService} from './components/core/app.component.service';
+import { CarouselComponent } from './components/carousel/app.carousel.component';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpModule],
-    declarations: [AppComponent],
+    imports: [NgbModule.forRoot(), BrowserModule, FormsModule, HttpModule],
+    declarations: [
+        AppComponent,
+        CarouselComponent
+    ],
     providers: [AppComponentService],
     bootstrap: [AppComponent]   
 })
