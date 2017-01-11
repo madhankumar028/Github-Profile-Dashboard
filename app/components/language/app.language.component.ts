@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
+import { LanguageComponentService } from './app.language.component.service';
 
 @Component({
     selector: 'lang-repo',
-    template: 
-    `
-    <div class="jumbotron">
-        <h1>Langugae Repo Count Area!</h1>
-    </div>
-    `,
-    styles: [
-        `
-            .jumbotron {
-                margin-left: 273px;
-            }
-        `
-    ]
+    templateUrl: 'app/components/language/app.language.component.html',
+    styleUrls: ['app/components/language/app.language.component.css'],
+    providers: [LanguageComponentService]
 })
 
 export class LanguageComponent {
 
+    constructor(private languageComponentService: LanguageComponentService) {}
+
+    getCommitsByRepo() {
+        this.languageComponentService.getCommitsByRepo()
+            .subscribe(data => {
+                data.json();
+            });
+    }
 }

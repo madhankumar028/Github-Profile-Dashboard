@@ -9,20 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var app_language_component_service_1 = require("./app.language.component.service");
 var LanguageComponent = (function () {
-    function LanguageComponent() {
+    function LanguageComponent(languageComponentService) {
+        this.languageComponentService = languageComponentService;
     }
+    LanguageComponent.prototype.getCommitsByRepo = function () {
+        this.languageComponentService.getCommitsByRepo()
+            .subscribe(function (data) {
+            data.json();
+        });
+    };
     return LanguageComponent;
 }());
 LanguageComponent = __decorate([
     core_1.Component({
         selector: 'lang-repo',
-        template: "\n    <div class=\"jumbotron\">\n        <h1>Langugae Repo Count Area!</h1>\n    </div>\n    ",
-        styles: [
-            "\n            .jumbotron {\n                margin-left: 273px;\n            }\n        "
-        ]
+        templateUrl: 'app/components/language/app.language.component.html',
+        styleUrls: ['app/components/language/app.language.component.css'],
+        providers: [app_language_component_service_1.LanguageComponentService]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [app_language_component_service_1.LanguageComponentService])
 ], LanguageComponent);
 exports.LanguageComponent = LanguageComponent;
 //# sourceMappingURL=app.language.component.js.map
