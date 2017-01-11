@@ -14,12 +14,15 @@ var AppComponent = (function () {
     function AppComponent(appComponentService) {
         this.appComponentService = appComponentService;
         this.title = 'App started';
+        this.tableData = [];
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.appComponentService.getUser()
             .subscribe(function (data) {
             _this.user = data.json();
+            _this.tableData.push(_this.user);
+            console.log(_this.tableData);
         });
     };
     return AppComponent;

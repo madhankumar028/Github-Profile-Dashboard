@@ -12,13 +12,17 @@ export class AppComponent implements OnInit {
     
     title = 'App started';
     @Input() user: Array<Object>;
-
+    
+    tableData = [];
+    
     constructor (private appComponentService: AppComponentService) {}
 
     ngOnInit() {
         this.appComponentService.getUser()
             .subscribe(data => {
                 this.user = data.json();
+                this.tableData.push(this.user);
+                console.log(this.tableData);
             });
     }
 }

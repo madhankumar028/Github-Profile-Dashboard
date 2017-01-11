@@ -1,3 +1,14 @@
- <div class="jumbotron">
-    <h1>Langugae Repo Count Area!</h1>
+ <div class="jumbotron" *ngIf="language">
+    <h1>{{langugae}}</h1>
+    <table class="tableData">
+        <tr>
+            <th>Name</th>
+            <th>Id</th>
+        </tr>
+        <tr *ngFor="let data of tableData">
+            <td>{{data.name}}</td>
+            <td>{{data.id}}</td>              
+        </tr>
+    </table>
+    <ngb-pagination [collectionSize]="40" [pageSize]="3" [disabled]="false" [(page)]="page" [maxSize]="4"></ngb-pagination>
 </div>
