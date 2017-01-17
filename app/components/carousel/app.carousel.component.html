@@ -1,7 +1,17 @@
 <ngb-carousel *ngIf="user">
     <template ngbSlide>
         <div class="carousel-caption">
-            <p>{{user.bio}}</p>
+            <p>test</p>
+        </div>
+    </template>
+    <template ngbSlide>
+        <div class="carousel-caption">
+            <p>{{user.login}}</p>
+        </div>
+    </template>
+    <template ngbSlide>
+        <div class="carousel-caption">
+            <p>{{user.location}}</p>
         </div>
     </template>
 </ngb-carousel>
