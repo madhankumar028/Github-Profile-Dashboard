@@ -9,13 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-// TODO parent comp
-// import { AppComponent } from '../core/app.component';
 var app_component_service_1 = require("../core/app.component.service");
 var app_carousel_component_service_1 = require("./app.carousel.component.service");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var CarouselComponent = (function () {
-    function CarouselComponent(appComponentService) {
+    function CarouselComponent(appComponentService, config) {
         this.appComponentService = appComponentService;
+        config.interval = 0;
+        config.wrap = true;
+        config.keyboard = false;
     }
     CarouselComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -28,12 +30,13 @@ var CarouselComponent = (function () {
 }());
 CarouselComponent = __decorate([
     core_1.Component({
-        selector: 'ng-carousel',
+        selector: 'ng-carousel-config',
         templateUrl: 'app/components/carousel/app.carousel.component.html',
         styleUrls: ['app/components/carousel/app.carousel.component.css'],
-        providers: [app_carousel_component_service_1.CarouselService, app_component_service_1.AppComponentService]
+        styles: ["\n        .carousel-item {\n            height: 150px;\n            display: none;\n        }\n    "],
+        providers: [app_carousel_component_service_1.CarouselService, app_component_service_1.AppComponentService, ng_bootstrap_1.NgbCarouselConfig]
     }),
-    __metadata("design:paramtypes", [app_component_service_1.AppComponentService])
+    __metadata("design:paramtypes", [app_component_service_1.AppComponentService, ng_bootstrap_1.NgbCarouselConfig])
 ], CarouselComponent);
 exports.CarouselComponent = CarouselComponent;
 //# sourceMappingURL=app.carousel.component.js.map

@@ -7,6 +7,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponentService} from './components/core/app.component.service';
 import { CarouselComponent } from './components/carousel/app.carousel.component';
+import { CarouselDirective } from './components/carousel/app.carousel.directive';
 import { LanguageComponent } from './components/language/app.language.component';
 
 @NgModule({
@@ -14,6 +15,7 @@ import { LanguageComponent } from './components/language/app.language.component'
     declarations: [
         AppComponent,
         CarouselComponent,
+        CarouselDirective,
         LanguageComponent
     ],
     providers: [AppComponentService],
