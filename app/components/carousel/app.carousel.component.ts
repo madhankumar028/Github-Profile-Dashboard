@@ -9,12 +9,6 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
     selector: 'ng-carousel-config',
     templateUrl: 'app/components/carousel/app.carousel.component.html',
     styleUrls: ['app/components/carousel/app.carousel.component.css'],
-    styles: [`
-        .carousel-item {
-            height: 150px;
-            display: none;
-        }
-    `],
     providers: [CarouselService, AppComponentService, NgbCarouselConfig]
 })
 

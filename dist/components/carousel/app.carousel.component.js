@@ -16,7 +16,7 @@ var CarouselComponent = (function () {
     function CarouselComponent(appComponentService, config) {
         this.appComponentService = appComponentService;
         config.interval = 0;
-        config.wrap = true;
+        config.wrap = false;
         config.keyboard = false;
     }
     CarouselComponent.prototype.ngOnInit = function () {
@@ -33,7 +33,6 @@ CarouselComponent = __decorate([
         selector: 'ng-carousel-config',
         templateUrl: 'app/components/carousel/app.carousel.component.html',
         styleUrls: ['app/components/carousel/app.carousel.component.css'],
-        styles: ["\n        .carousel-item {\n            height: 150px;\n            display: none;\n        }\n    "],
         providers: [app_carousel_component_service_1.CarouselService, app_component_service_1.AppComponentService, ng_bootstrap_1.NgbCarouselConfig]
     }),
     __metadata("design:paramtypes", [app_component_service_1.AppComponentService, ng_bootstrap_1.NgbCarouselConfig])
