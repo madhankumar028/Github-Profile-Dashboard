@@ -23,7 +23,11 @@ var CarouselDirective = (function () {
         if (!children)
             return;
         Array.from(children)
-            .map(function (x) { return (x.style.height = '75px') && (x.style.display = 'block'); });
+            .map(function (x) {
+            if (x.className !== 'carousel-item active') {
+                (x.style.height = '75px') && (x.style.display = 'block');
+            }
+        });
     };
     return CarouselDirective;
 }());

@@ -13,9 +13,15 @@ var http_1 = require("@angular/http");
 var LanguageComponentService = (function () {
     function LanguageComponentService(http) {
         this.http = http;
+        this.baseUrl = 'https://api.github.com/repos/madhankumar028/';
+        this.repoUrl = 'https://api.github.com/users/madhankumar028/repos';
     }
-    LanguageComponentService.prototype.getCommitsByRepo = function () {
-        return this.http.get('');
+    LanguageComponentService.prototype.getUserRepos = function () {
+        return this.http.get(this.repoUrl);
+    };
+    LanguageComponentService.prototype.getCommitsByRepo = function (repoName) {
+        var url = this.baseUrl + repoName + '/commits';
+        return this.http.get(url);
     };
     return LanguageComponentService;
 }());

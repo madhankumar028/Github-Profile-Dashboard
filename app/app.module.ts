@@ -18,7 +18,7 @@ import { LanguageComponent } from './components/language/app.language.component'
         CarouselDirective,
         LanguageComponent
     ],
-    providers: [AppComponentService],
+    providers: [AppComponentService],    
     bootstrap: [AppComponent]
 })
 

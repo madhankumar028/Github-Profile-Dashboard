@@ -14,11 +14,28 @@ var LanguageComponent = (function () {
     function LanguageComponent(languageComponentService) {
         this.languageComponentService = languageComponentService;
         this.language = "Language Repo Area!";
+        this.repo = [];
+        this.commits = [];
     }
-    LanguageComponent.prototype.getCommitsByRepo = function () {
-        this.languageComponentService.getCommitsByRepo()
+    LanguageComponent.prototype.ngOnInit = function () {
+        this.getUserRepos();
+    };
+    LanguageComponent.prototype.getUserRepos = function () {
+        var _this = this;
+        this.languageComponentService.getUserRepos()
             .subscribe(function (data) {
-            data.json();
+            _this.repo = data.json();
+            for (var i = 0; i < _this.repo.length; i++) {
+                _this.getCommitsByRepo(_this.repo[i].name);
+            }
+            console.log(_this.commits);
+        });
+    };
+    LanguageComponent.prototype.getCommitsByRepo = function (repoName) {
+        var _this = this;
+        this.languageComponentService.getCommitsByRepo(repoName)
+            .subscribe(function (data) {
+            _this.commits.push(data.json());
         });
     };
     return LanguageComponent;

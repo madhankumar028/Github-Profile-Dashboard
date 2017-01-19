@@ -24,6 +24,10 @@ export class CarouselDirective implements AfterViewChecked{
         if(!children) return;
 
         Array.from(children)
-            .map( (x: HTMLElement) => (x.style.height='75px') && (x.style.display ='block'));
+            .map(function (x: HTMLElement){
+                if (x.className !== 'carousel-item active') {
+                    (x.style.height='75px') && (x.style.display ='block');
+                }
+            });
     }
 }

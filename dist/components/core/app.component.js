@@ -13,7 +13,6 @@ var app_component_service_1 = require("./app.component.service");
 var AppComponent = (function () {
     function AppComponent(appComponentService) {
         this.appComponentService = appComponentService;
-        this.title = 'App started';
         this.tableData = [];
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -22,15 +21,11 @@ var AppComponent = (function () {
             .subscribe(function (data) {
             _this.user = data.json();
             _this.tableData.push(_this.user);
-            console.log(_this.tableData);
+            console.log(_this.user);
         });
     };
     return AppComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], AppComponent.prototype, "user", void 0);
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-root',

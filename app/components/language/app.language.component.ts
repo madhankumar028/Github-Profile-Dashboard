@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LanguageComponentService } from './app.language.component.service';
 
 @Component({
@@ -8,16 +8,33 @@ import { LanguageComponentService } from './app.language.component.service';
     providers: [LanguageComponentService]
 })
 
-export class LanguageComponent {
+export class LanguageComponent implements OnInit {
 
     constructor(private languageComponentService: LanguageComponentService) {}
     
     language = "Language Repo Area!";
+    repo = [];
+    commits = [];
 
-    getCommitsByRepo() {
-        this.languageComponentService.getCommitsByRepo()
+    ngOnInit() {
+        this.getUserRepos();
+    }
+
+    getUserRepos() {
+        this.languageComponentService.getUserRepos()
             .subscribe(data => {
-                data.json();
+                this.repo = data.json();
+                for (var i = 0; i < this.repo.length; i++) {
+                    this.getCommitsByRepo(this.repo[i].name);
+                }
+                console.log(this.commits);
+            });
+    }
+
+    getCommitsByRepo(repoName: string) {
+        this.languageComponentService.getCommitsByRepo(repoName)
+            .subscribe(data => {
+                this.commits.push(data.json());
             });
     }
 }

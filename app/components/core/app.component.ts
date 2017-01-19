@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppComponentService } from './app.component.service';
 
 @Component({
@@ -10,8 +10,7 @@ import { AppComponentService } from './app.component.service';
 
 export class AppComponent implements OnInit {
     
-    title = 'App started';
-    @Input() user: Array<Object>;
+    user: Array<Object>;
     
     tableData = [];
     
@@ -22,7 +21,7 @@ export class AppComponent implements OnInit {
             .subscribe(data => {
                 this.user = data.json();
                 this.tableData.push(this.user);
-                console.log(this.tableData);
+                console.log(this.user);
             });
     }
 }
