@@ -5,13 +5,16 @@ import { AppComponent } from './components/core/app.component';
 import { HttpModule} from '@angular/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import 'hammerjs';
+
 import { AppComponentService} from './components/core/app.component.service';
 import { CarouselComponent } from './components/carousel/app.carousel.component';
 import { CarouselDirective } from './components/carousel/app.carousel.directive';
 import { LanguageComponent } from './components/language/app.language.component';
 
 @NgModule({
-    imports: [NgbModule.forRoot(), BrowserModule, FormsModule, HttpModule],
+    imports: [NgbModule.forRoot(), BrowserModule, FormsModule, HttpModule, ChartsModule],
     declarations: [
         AppComponent,
         CarouselComponent,
