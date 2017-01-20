@@ -14,8 +14,6 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./components/core/app.component");
 var http_1 = require("@angular/http");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
-var kendo_angular_charts_1 = require("@progress/kendo-angular-charts");
-require("hammerjs");
 var app_component_service_1 = require("./components/core/app.component.service");
 var app_carousel_component_1 = require("./components/carousel/app.carousel.component");
 var app_carousel_directive_1 = require("./components/carousel/app.carousel.directive");
@@ -27,7 +25,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [ng_bootstrap_1.NgbModule.forRoot(), platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, kendo_angular_charts_1.ChartsModule],
+        imports: [ng_bootstrap_1.NgbModule.forRoot(), platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
         declarations: [
             app_component_1.AppComponent,
             app_carousel_component_1.CarouselComponent,
