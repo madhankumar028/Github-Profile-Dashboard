@@ -15,9 +15,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 export class CarouselComponent implements OnInit {
 
     constructor(private appComponentService: AppComponentService, config: NgbCarouselConfig) {
-        
-        config.interval = 0;
-        config.wrap = false;
+        config.wrap = true;
         config.keyboard = false;
     }
     

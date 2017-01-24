@@ -15,8 +15,7 @@ var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var CarouselComponent = (function () {
     function CarouselComponent(appComponentService, config) {
         this.appComponentService = appComponentService;
-        config.interval = 0;
-        config.wrap = false;
+        config.wrap = true;
         config.keyboard = false;
     }
     CarouselComponent.prototype.ngOnInit = function () {

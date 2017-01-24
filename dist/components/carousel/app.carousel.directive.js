@@ -25,7 +25,7 @@ var CarouselDirective = (function () {
         Array.from(children)
             .map(function (x) {
             if (x.className !== 'carousel-item active') {
-                (x.style.height = '75px') && (x.style.display = 'block');
+                (x.style.height = '50px') && (x.style.display = 'block');
             }
         });
     };
