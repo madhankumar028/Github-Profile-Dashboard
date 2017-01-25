@@ -28,13 +28,18 @@ export class LanguageComponent implements OnInit {
                     this.getCommitsByRepo(this.repo[i].name);
                 }
                 console.log(this.commits);
+                this.constructCommitsBasedOnRepo(this.commits);
             });
     }
 
     getCommitsByRepo(repoName: string) {
         this.languageComponentService.getCommitsByRepo(repoName)
             .subscribe(data => {
-                this.commits.push(data.json());
+                Array.prototype.push.apply(this.commits, data.json());
             });
+    }
+
+    constructCommitsBasedOnRepo(totalCommits) {
+        totalCommits.map((commits) => console.log(commits.length));
     }
 }

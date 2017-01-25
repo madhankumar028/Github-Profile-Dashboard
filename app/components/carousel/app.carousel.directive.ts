@@ -12,10 +12,10 @@ export class CarouselDirective implements AfterViewChecked{
     constructor(private element: ElementRef) {}
 
     ngAfterViewChecked() {
-        this.applyHeight(this.element.nativeElement, this.carouselStyle);
+        this.applyCss(this.element.nativeElement, this.carouselStyle);
     }
 
-    applyHeight(parent: HTMLElement, carouselStyle: string) {
+    applyCss(parent: HTMLElement, carouselStyle: string) {
 
         if(!parent) return;
 

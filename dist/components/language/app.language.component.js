@@ -29,14 +29,18 @@ var LanguageComponent = (function () {
                 _this.getCommitsByRepo(_this.repo[i].name);
             }
             console.log(_this.commits);
+            _this.constructCommitsBasedOnRepo(_this.commits);
         });
     };
     LanguageComponent.prototype.getCommitsByRepo = function (repoName) {
         var _this = this;
         this.languageComponentService.getCommitsByRepo(repoName)
             .subscribe(function (data) {
-            _this.commits.push(data.json());
+            Array.prototype.push.apply(_this.commits, data.json());
         });
+    };
+    LanguageComponent.prototype.constructCommitsBasedOnRepo = function (totalCommits) {
+        totalCommits.map(function (commits) { return console.log(commits.length); });
     };
     return LanguageComponent;
 }());

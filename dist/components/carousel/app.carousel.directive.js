@@ -14,9 +14,9 @@ var CarouselDirective = (function () {
         this.element = element;
     }
     CarouselDirective.prototype.ngAfterViewChecked = function () {
-        this.applyHeight(this.element.nativeElement, this.carouselStyle);
+        this.applyCss(this.element.nativeElement, this.carouselStyle);
     };
-    CarouselDirective.prototype.applyHeight = function (parent, carouselStyle) {
+    CarouselDirective.prototype.applyCss = function (parent, carouselStyle) {
         if (!parent)
             return;
         var children = parent.getElementsByClassName(carouselStyle);

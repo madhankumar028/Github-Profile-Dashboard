@@ -15,6 +15,7 @@ var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var CarouselComponent = (function () {
     function CarouselComponent(appComponentService, config) {
         this.appComponentService = appComponentService;
+        config.interval = 0;
         config.wrap = true;
         config.keyboard = false;
     }
@@ -31,7 +32,7 @@ CarouselComponent = __decorate([
     core_1.Component({
         selector: 'ng-carousel-config',
         templateUrl: 'app/components/carousel/app.carousel.component.html',
-        styleUrls: ['app/components/carousel/app.carousel.component.css'],
+        // styleUrls: ['app/components/carousel/app.carousel.component.css'],
         providers: [app_carousel_component_service_1.CarouselService, app_component_service_1.AppComponentService, ng_bootstrap_1.NgbCarouselConfig]
     }),
     __metadata("design:paramtypes", [app_component_service_1.AppComponentService, ng_bootstrap_1.NgbCarouselConfig])
