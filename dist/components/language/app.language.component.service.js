@@ -20,8 +20,8 @@ var LanguageComponentService = (function () {
         return this.http.get(this.repoUrl);
     };
     LanguageComponentService.prototype.getCommitsByRepo = function (repoName) {
-        var url = this.baseUrl + repoName + '/commits';
-        return this.http.get(url);
+        var url = this.baseUrl + repoName;
+        return this.http.get(url + "/commits");
     };
     return LanguageComponentService;
 }());

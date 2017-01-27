@@ -14,7 +14,7 @@ export class LanguageComponentService {
     }
 
     getCommitsByRepo(repoName: string) {
-        var url = this.baseUrl + repoName + '/commits';
-        return this.http.get(url);
+        var url = this.baseUrl + repoName;
+        return this.http.get(`${url}/commits`);
     }
 }
